@@ -3,18 +3,18 @@ import {Line} from 'react-chartjs-2';
 
 export default function Home() {
   const fData = [];
-  for(let i=0;i<10;i++){
-    fData.push({x:i,y:i*i})
+  for(let i=-10;i<=10;i++){
+    fData.push({x:i,y:Math.pow(i,2)})
   }
   const data = {
         labels:fData.map(d=>d.x),
         datasets:[
           {
-            label:'khra for 2020',
+            label:'exp(x) ',
             data:fData.map(d=>d.y),
             backgroundColor:['red','blue'],
-            borderColor:['yellow'],
-            pointBackgroundColor:['orange'],
+            borderColor:['blue'],
+            pointBackgroundColor:['red'],
             pointBorderColor:['black']
 
           }
