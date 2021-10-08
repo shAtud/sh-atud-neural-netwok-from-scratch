@@ -1,14 +1,16 @@
 class Neuron{
-   
     constructor(x,w,b){
-    
+        
         this.val =   this.calculateVal(x,w,b);
-        this.activatedVal = sigmoid(val);
+         this.activatedVal =  this.sigmoid(this.val);
 
     }
 
-    sigmoind = (x)=> 1/(Math.exp(-x)+1);
-    
+    sigmoid(x){
+        return   1/(Math.exp(-x)+1);
+    }
+  
+   
     calculateVal(x,w,b){
         let res;
         for(let i=0;i<x.length;i++){
@@ -18,4 +20,10 @@ class Neuron{
 
         return res;
     }
+   
+   
+   
 }
+
+const n = new Neuron([1,2,3,4,5],[1,2,3,4,5],10);
+console.log(n.activatedVal);
