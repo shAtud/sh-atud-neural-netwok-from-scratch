@@ -10,7 +10,7 @@ export default function Home() {
         labels:fData.map(d=>d.x),
         datasets:[
           {
-            label:'exp(x) ',
+            label:'x^2 ',
             data:fData.map(d=>d.y),
             backgroundColor:['red','blue'],
             borderColor:['blue'],
