@@ -24,7 +24,9 @@ export default function Home() {
            }]
           }
         ]
+        
 
+        
   }
   const options = {
       responsive:true,
