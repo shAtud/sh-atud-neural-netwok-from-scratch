@@ -1,38 +1,18 @@
 import Head from 'next/head'
+import { useEffect } from 'react';
 import {Line} from 'react-chartjs-2';
+// import n from '../neuralNetwork';
+import BarChart from './components/BarChart';
+import ScatterPlot from './components/ScatterPlot';
+import Graph from './components/Graph';
 
-export default function Home() {
-  const fData = [];
-  const sigmoind = (x)=> 1/(Math.exp(-x)+1);
-  for(let i=-10;i<=10;i++){
-    fData.push({x:i,y:sigmoind(i)})
-  }
-
-  const data = {
-        labels:fData.map(d=>d.x),
-        datasets:[
-          {
-            label:'sigmoid function ',
-            data:fData.map(d=>d.y),
-            backgroundColor:['red','blue'],
-            borderColor:['blue'],
-            pointBackgroundColor:['red'],
-            pointBorderColor:['black']
-
-          },
-         
-
-        ]
-
-  }
-  const options = {
-      title:{
-        display:true,
-        text:'Line chart',
-
-      },
+const Home = props =>{
   
-  }
+
+     
+    
+      
+     
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <Head>
@@ -41,8 +21,42 @@ export default function Home() {
       </Head>
 
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center border-4 h-[50vh] ">
-          <Line data={data} options={options} />
+       {/* <ScatterPlot 
+          title='error-iterations chart'
+          data={
+            n.trainningHistory.map((d,i)=>{return {x:i,y:d.error*10}})
+          }
+        />
+         <ScatterPlot 
+          title='weight-iteration chart'
+          data={
+            n.trainningHistory.map((d,i)=>{return {x:i,y:d.w[0]}})
+          }
+        />
+          <ScatterPlot 
+          title='error-weight chart'
+          data={
+            n.trainningHistory.map((d,i)=>{return {x:d.w[0],y:d.error*10}})
+          }
+        /> */}
+        <Graph/>
       </main>
     </div>
   )
 }
+
+export default Home;
+
+
+   /* <SmilingFace
+                width ={ 500}
+                height = {500}
+                centerX ={ 500/2}
+                centerY = {500/2}
+                strokeWith = {10}
+                eyeOffsetX = {0.2*500}
+                eyeOffsetY = {-0.2*500}
+                eyeRadius = {40}
+                mouthWidth ={ 20}
+                mouthRadius ={140}
+          /> */
