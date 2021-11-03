@@ -29,7 +29,7 @@ class AdjacencyMatrix{
               
                 this.adj_matrix[i].push(0)
               
-               
+               ``
                
             }
         }
